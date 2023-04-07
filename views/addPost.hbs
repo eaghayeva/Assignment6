@@ -1,0 +1,65 @@
+
+        <div class="row">
+
+            <div class="container  px-md-5 ">
+                <h2 class="py-4">Add Post</h2>
+
+                <h2 class="py-4"></h2>
+
+                <form class="needs-validation" novalidate method="post" enctype="multipart/form-data">
+                    <div class="form-row">
+                        <div class="col mb-3">
+                            <h3>Feature Image</h3>
+                            <hr>
+                            <input type="file" class="form-control" id="Image" name="featureImage" required>
+                        </div>
+                        <h3>Post Content</h3>
+                        <hr>
+                        <div class="col mb-3">
+                            <label for="Title">Title</label>
+                            <input type="text" class="form-control" id="Title" name="title" placeholder="Post Title" required >
+                        </div>
+                        <br>
+                        <div class="col mb-3">
+                            <label for="postbody">Body</label>
+                            <textarea class="form-control" name="postbody" rows="7" placeholder="Post Content"></textarea>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-row row">
+                        <div class="col-md-6 mb-3">
+                            <label for="Category">Category</label>
+
+                           {{#if categories}}
+                                <select class="form-control" name="category" id="category">
+                                    <option value="">Select Category</option>
+                                    {{#each categories}}
+                                        <option value="{{id}}">{{category}}</option>
+                                    {{/each}}
+                                </select>
+                            {{else}}
+                                <div>No Categories</div>
+                            {{/if}}
+                        </div>
+
+                        <div class="col-md-6 mb-3 pt-1">
+                            <label class="form-check-label" for="inlineCheckbox1">Visibility</label><br>
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <label class="form-check-label" name="published" for="inlineCheckbox1">Published</label>
+                        </div>
+                    </div>
+                    <br>
+                    <hr>
+                    <div class="form-row row">
+                        <div class="text-end bg-light py-4 col-md-11"></div>
+                        <div class="text-end bg-light py-4 col-md-1">
+                            <button class="btn btn-primary" type="submit">Add Post</button>
+                        </div>
+                    </div>
+                    <br><br>
+                </form>
+            </div>
+
+
+        </div>
+ 
